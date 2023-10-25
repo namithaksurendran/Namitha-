@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Student Register</title>
+    <link rel="stylesheet" href="amal.css">
+</head>
+<body>
+    <div class="container">
+        <div class="main-heading">
+        <h1>Student <span>Register</span></h1>
+        <p>Register here with your details</p>
+      </div>
+        <div class="form-container">
+            <div class="signup-heading">
+                <h2>Sign Up</h2>
+            </div>
+           <form action=""  onsubmit=" return form()" >
+            <div class="form-input">
+                <label for="">User name </label><br>
+                <input type="text" placeholder="User Name" id="username"><br>
+                <span id="usernameerror"></span>
+            </div>
+
+
+
+            
+
+            <div class="form-input">
+                <label for="">Email </label><br>
+                <input type="email" placeholder="Email" id="email">
+                <span id="emaill"></span>
+            </div>
+
+            <div class="form-input">
+                <label for="">Password </label><br>
+                <input type="password" placeholder="Password" id="password">
+                <span id="password1"></span>
+            </div>
+
+            <div class="form-input">
+                <label for="">Retype Password</label><br>
+                <input type="text" placeholder="Retype" id="retypePassword">
+                <span id="password2"></span>
+            </div>
+
+            <div class="form-checkbox">
+                <label for="">Accept the terms and policies</label>
+                <input type="checkbox">
+            </div>
+
+            <input type="submit" value="Sign Up"onclick="form()">
+           </form>
+          
+           <hr>
+            <div class="login-heading">
+             <h4>Already have an account</h4>
+            </div>
+            <form action="">
+              <input type="button" value="Log In">
+            </form>
+        </div>
+    </div>
+    <script>
+    function form(){
+        let username=document.getElementById("username").value;
+        let email=document.getElementById("email").value;
+        let password=document.getElementById("password").value;
+        let retypepassword=document.getElementById("retypePassword").value;
+        
+        if(username==""){
+        
+        document.getElementById("username").style.borderColor="red";
+        document.getElementById("usernameerror").style.color="red";
+        document.getElementById("usernameerror").innerHTML="fill the username";
+        return false;
+
+        }
+      
+         if(email==""){
+        document.getElementById("email").style.borderColor="red";
+        document.getElementById("emaill").style.color="red";
+        document.getElementById("emaill").innerHTML="enter the username";
+        return false;
+
+        }
+        if(password.length <=8){
+        document.getElementById("password").style.borderColor="red";
+        document.getElementById("password1").style.color="red";
+        document.getElementById("password1").innerHTML="Enter the password";
+        return false;
+            
+        }
+        if(retypepassword!=password){
+            document.getElementById("retypepassword").style.borderColor="red";
+        document.getElementById("password2").style.color="red";
+        document.getElementById("password2").innerHTML="Enter the same password";
+        return false;
+        }
+
+        
+       
+    }
+</script>
+
+</body>
+</html>
